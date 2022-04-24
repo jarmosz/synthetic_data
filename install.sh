@@ -2,7 +2,8 @@
 apt update -y
 apt upgrade
 
-apt-get install python3 python3-pip python3-venv unzip gawk
+apt-get install python3 python3-pip python3-venv unzip gawk screen
+screen -S generate_data
 python3 -m venv env
 source ./env/bin/activate
 pip install -r requirements.txt
