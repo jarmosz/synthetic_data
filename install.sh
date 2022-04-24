@@ -1,8 +1,8 @@
 #!/bin/bash
 apt update -y
-apt upgrade
+apt upgrade -y
 
-apt-get install python3 python3-pip python3-venv unzip gawk screen
+apt-get install python3 python3-pip python3-venv unzip gawk screen python-dev libhunspell-dev
 python3 -m venv env
 source ./env/bin/activate
 pip install pandas spacy regex scipy hunspell
