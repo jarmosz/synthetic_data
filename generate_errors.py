@@ -6,13 +6,8 @@ from scipy.stats import norm
 import pandas as pd
 import regex as re
 import glob
+import sys
 import threading
-
-# pip install hunspell spacy
-# python -m spacy download pl_core_news_lg
-# sed -ri '/^\s*$/d' ./datasets_original/oscar/oscar_pl_test.txt
-#  unzip -p oscar_filtered.zip | sed -r '/^\s*$/d' | gawk 'NF>6'  > oscar_filtered.txt
-
 
 class SyntheticErrorsGenerator:
     def __init__(self):
@@ -160,9 +155,4 @@ class SyntheticErrorsGenerator:
 
 
 synthetic_errors_generator = SyntheticErrorsGenerator()
-synthetic_errors_generator.generate_synthetic_errors_from_file('./datasets_original/oscar/splitted_oscar/output_fileaa', './datasets_original/oscar/splitted_oscar/results/input1.txt', './datasets_original/oscar/splitted_oscar/results/output1.txt')
-
-# synthetic_errors_generator.generate_synthetic_errors_from_folder(folder_path='./datasets_original/oscar/splitted_oscar/*')
-# synthetic_errors_generator.generate_synthetic_errors('./datasets_original/oscar/splitted_oscar/output_fileaa', './datasets_original/oscar/splitted_oscar/input1.txt', './datasets_original/oscar/splitted_oscar/output1.txt')
-# synthetic_errors_generator.generate_synthetic_errors('./datasets_original/lektury/input2_lektury.txt', './datasets_original/lektury/input2.txt', './datasets_original/lektury/output2.txt')
-
+synthetic_errors_generator.generate_synthetic_errors_from_file(sys.argv[1], 'input.txt', 'output.txt')
