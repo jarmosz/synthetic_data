@@ -5,7 +5,7 @@ apt upgrade
 apt-get install python3 python3-pip python3-venv unzip gawk screen
 python3 -m venv env
 source ./env/bin/activate
-pip install -r requirements.txt
+pip install pandas spacy regex scipy hunspell
 python -m spacy download pl_core_news_lg
 
 mkdir data && cd data
